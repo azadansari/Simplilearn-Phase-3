@@ -1,0 +1,10 @@
+<div class="container">
+  <input type="button" value="laod data" (click)="getAllProductDetails()">
+  <br>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <p>{{product.pname}}</p>
+      <img src="{{product.url}}" width="200px" height="auto">
+    </div>
+  </div>
+</div>

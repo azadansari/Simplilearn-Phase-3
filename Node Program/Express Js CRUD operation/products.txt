@@ -1,0 +1,5 @@
+[
+	{"pid":100,"pname":"Home Theater","price":10000,"url":"https://e7.pngegg.com/pngimages/315/206/png-clipart-computer-speakers-subwoofer-sound-box-home-theater-systems-electronics-electronic-device-thumbnail.png"},
+	{"pid":101,"pname":"Tv","price":35000,"url":"https://e7.pngegg.com/pngimages/659/65/png-clipart-high-definition-television-haier-led-backlit-lcd-hd-ready-smart-tv-tv-miscellaneous-television-thumbnail.png"},
+	{"pid":102,"pname":"Cooler","price":3000,"url":"https://e7.pngegg.com/pngimages/211/122/png-clipart-evaporative-coolers-havells-celia-i-desert-air-cooler-havells-celia-55-litre-cooler-havells-70-l-freddo-i-desert-cooler-air-cooler-evaporative-coolers-havells-celia-i-desert-air-cooler-thumbnail.png"}
+]
