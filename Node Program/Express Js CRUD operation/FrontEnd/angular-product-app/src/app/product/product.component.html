@@ -1,10 +1,67 @@
 <div class="container">
-  <input type="button" value="laod data" (click)="getAllProductDetails()">
-  <br>
+  <h5 class="text-info">Add product Details</h5>
   <div class="row">
-    <div class="col-md-4" *ngFor="let product of products">
-      <p>{{product.pname}}</p>
-      <img src="{{product.url}}" width="200px" height="auto">
+    <div class="col-md-6">
+      <form [formGroup]="productRef">
+        <label class="form-label">PId </label> &nbsp;
+        <input type="number" formControlName="pid" class="form-control" /><br />
+        <label class="form-label">PName </label> &nbsp;
+        <input type="text" formControlName="pname" class="form-control" /><br />
+        <label class="form-label">Price </label> &nbsp;
+        <input type="number" formControlName="price" class="form-control" /><br />
+        <label class="form-label">Image URL </label> &nbsp;
+        <input type="url" formControlName="url" class="form-control" /><br /><br />
+        <input type="button" value="Add Product" class="btn btn-primary" (click)="storeProduct()" /> &nbsp;
+        <input type="reset" value="reset" class="btn btn-warning" />
+      </form>
+    </div>
+  </div>
+
+  <span style="color:red">{{storeMsg}}</span>
+  <hr />
+  <br />
+
+
+
+  <br><br>
+  <!-- <input type="button" value="laod data" (click)="getAllProductDetails()"> -->
+  <br>
+  <div class="row mt-3">
+    <div class="col-md-3" *ngFor="let product of products">
+      <div class="card">
+        <div class="card-body">
+          <img src={{product.url}} width="100%" height="200px" class="rounded"/><br />
+          <span>{{product.pname}}</span><br />
+          <span> {{product.price}}</span><br /><br />
+          <div style="align-items: center;">
+            <input type="button" value="delete" (click)="deleteProduct(product.pid)" class="btn btn-danger" /> &nbsp;
+            <input type="button" value="update" (click)="updateProduct(product)" class="btn btn-info" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <span style="color:red">{{deleteMsg}}</span>
+  </div>
+
+
+  <div *ngIf="flag">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-info mt-4 mb-3">Update the record</h5>
+
+        <label class="form-label">PId </label> &nbsp;
+        <input type="number" name="pid" [(ngModel)]="pid" readonly class="form-control" /><br />
+        <!-- <label>PName </label> &nbsp;
+    <input type="text" [(ngModel)]="pid" /><br /> -->
+        <label class="form-label">Price </label> &nbsp;
+        <input type="number" name="price" [(ngModel)]="price" class="form-control" /><br />
+        <label class="form-label">Image URL </label> &nbsp;
+        <input type="url" name="url" [(ngModel)]="url" class="form-control" /><br /><br />
+
+        <input type="button" value="update record" (click)="updateRecordFromdb()" class="btn btn-primary" /> &nbsp;
+        <input type="reset" value="reset" class="btn btn-warning" /><br />
+        <span style="color:red">{{updateMsg}}</span>
+      </div>
     </div>
   </div>
 </div>
